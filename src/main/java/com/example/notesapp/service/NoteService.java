@@ -29,9 +29,9 @@ public class NoteService {
     }
 
     public Note getNoteById(Long id) {
-        log.info("Получение заметки c id {}", id);
+        log.info("Получение заметки c id: {}", id);
         return noteRepository.findById(id).orElseThrow(() -> {
-            log.warn("Заметка с id {} не найдена", id);
+            log.warn("Заметка с id: {} не найдена", id);
             return new NoteNotFoundException(id);
         });
     }
@@ -41,7 +41,9 @@ public class NoteService {
         Note existing = getNoteById(id);
         existing.setTitle(updateNote.getTitle());
         existing.setContent(updateNote.getContent());
-        return noteRepository.save(existing);
+        Note saved = noteRepository.save(existing);
+        log.info("Обновление заметки с id: {} прошло успешно", id);
+        return saved;
     }
 
     public void deleteNote(Long id) {
