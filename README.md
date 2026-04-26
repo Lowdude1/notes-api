@@ -15,7 +15,8 @@ REST API для создания, чтения, обновления и удал
 - H2 Database
 - Lombok
 - Maven
-
+- JUnit 5
+- Mockito
 ## Возможности
 
 - CRUD операции с заметками
@@ -36,7 +37,7 @@ REST API для создания, чтения, обновления и удал
 
 Клонировать репозиторий:
 
-git clone https://github.com/ваш-логин/notes-api.git
+git clone https://github.com/Lowdude1/notes-api.git
 
 Перейти в папку проекта:
 
